@@ -15,11 +15,25 @@ class SpellView extends StatelessWidget {
       Get.put(SpellController());
 
   Future<void> logout() async {
-    final prefs = await SharedPreferences.getInstance();
+    final prefs =
+        await SharedPreferences.getInstance();
 
     await prefs.remove('isLogin');
 
     Get.offAll(() => LoginView());
+
+    Future.delayed(
+      const Duration(milliseconds: 300),
+      () {
+        Get.snackbar(
+          "Success!",
+          "Logged out Successfully",
+          snackPosition: SnackPosition.TOP,
+          backgroundColor: Colors.green,
+          colorText: Colors.white,
+        );
+      },
+    );
   }
 
   @override

@@ -18,8 +18,8 @@ class LoginController extends GetxController {
       await prefs.setBool('isLogin', true);
 
       Get.snackbar(
-        "Berhasil",
-        "Login berhasil",
+        "Success!",
+        "Login Successfully",
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.green,
         colorText: Colors.white,
